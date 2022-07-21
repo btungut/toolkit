@@ -1,0 +1,15 @@
+name: balpine CI
+
+on:
+  push:
+    paths:
+      - "balpine/**"
+
+jobs:
+  docker_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: build
+        run: docker build . -t btungut/balpine:$(date +%s)
+        working-directory: balpine
