@@ -13,7 +13,7 @@ jobs:
     steps:
       - id: env
         run: |
-          TAG=$(echo ${GITHUB_REF_NAME#v})"
+          TAG=$(echo ${GITHUB_REF_NAME#v})
           echo "tag = $TAG"
           echo "##[set-output name=tag;]$TAG"
 
