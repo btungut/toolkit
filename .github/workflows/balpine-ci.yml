@@ -2,6 +2,8 @@ name: balpine CI
 
 on:
   push:
+    tags:
+      - "v*"
     paths:
       - "balpine/**"
 
@@ -9,6 +11,15 @@ jobs:
   docker_build:
     runs-on: ubuntu-latest
     steps:
+      - name: env
+        run: |
+          TAG=`echo -n ${{ github.ref }} | sed -E "s/v//g"`
+          echo "git_tag = $TAG"
+          echo "::set-env name=git_tag::$TAG"
+
+      - run: |
+          echo "sonuc : btungut/fluentd-kube-elastic:$git_tag"
+
       - uses: actions/checkout@v3
       - name: build
         run: docker build . -t btungut/balpine:$(date +%s)
