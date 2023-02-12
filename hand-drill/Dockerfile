@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     jq \
     git \
-    iputils-ping \
+    dnsutils \
     libcurl4 \
     libicu60 \
     libunwind8 \
@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     htop \
     iputils-ping
 
-RUN wget https://github.com/mikefarah/yq/releases/download/v4.25.1/yq_linux_amd64 \
+RUN wget https://github.com/mikefarah/yq/releases/download/v4.30.8/yq_linux_amd64 \
     && mv ./yq_linux_amd64 /usr/bin/yq \
     && chmod +x /usr/bin/yq
 
