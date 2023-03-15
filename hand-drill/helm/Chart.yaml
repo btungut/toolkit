@@ -1,0 +1,6 @@
+apiVersion: v2
+name: hand-drill
+description: Deploys the Ubuntu-based hand-drill image, which contains frequently used tools.
+type: application
+version: 0.0.2
+appVersion: "0.0.2"
