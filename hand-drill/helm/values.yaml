@@ -1,6 +1,10 @@
 nameOverride: ""
 fullnameOverride: ""
 
+command:
+  - sleep
+  - infinity
+
 replicaCount: 1
 
 image:
