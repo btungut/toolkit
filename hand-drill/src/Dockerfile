@@ -1,34 +1,34 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN echo "APT::Get::Assume-Yes \"true\";" > /etc/apt/apt.conf.d/90assumeyes
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update
+
+RUN apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
     jq \
     git \
-    dnsutils \
-    libcurl4 \
-    libicu60 \
-    libunwind8 \
-    netcat \
-    libssl1.0 \
-  && rm -rf /var/lib/apt/lists/*
+    libssl1.0
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
+    netcat \
     wget \
     unzip \
     telnet \
     iotop \
     iftop \
     htop \
-    iputils-ping
+    dnsutils \
+    iputils-ping \
+    traceroute \
+    iperf3
 
-RUN wget https://github.com/mikefarah/yq/releases/download/v4.30.8/yq_linux_amd64 \
-    && mv ./yq_linux_amd64 /usr/bin/yq \
-    && chmod +x /usr/bin/yq
-
-RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.4/powershell-lts_7.2.4-1.deb_amd64.deb \
-    && dpkg -i powershell-lts_7.2.4-1.deb_amd64.deb \
-    && apt-get install -f
+#nginx web server
+RUN apt-get install -y --no-install-recommends nginx
+RUN rm -rf /var/www/html/*
+COPY index.html /var/www/html/index.html
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+CMD [ "/entrypoint.sh" ]
