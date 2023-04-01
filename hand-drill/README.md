@@ -25,6 +25,9 @@ kubectl apply -f https://raw.githubusercontent.com/btungut/toolkit/master/hand-d
 
 > Before run the kubectl apply command, ensure the namespace you're working on!
 
+## Source
+Please visit the [github repository](https://github.com/btungut/toolkit/tree/master/hand-drill) for further details and source files.
+
 ### Disclaimer
 This application provided for the purpose of illustration and debugging only and is not intended to be used in a production environment.
 
