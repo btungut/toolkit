@@ -1,7 +1,7 @@
 # hand-drill
 This is the docker image inherited from **Ubuntu 20.04** and built for the **debugging** purposes, especially the **web and network** related subjects. It includes mostly used tools and a **web server that listens the 8080** port.
 
-Please visit the `Dockerfile` for the details and included packages/applications.
+Please visit the [`Dockerfile`](https://github.com/btungut/toolkit/blob/master/hand-drill/src/Dockerfile) for the details and included packages/applications.
 
 ## Run on docker
 Execute the following snippet on your terminal to run hand-drill on your docker environment:
@@ -27,6 +27,9 @@ kubectl apply -f https://raw.githubusercontent.com/btungut/toolkit/master/hand-d
 
 ## Source
 Please visit the [github repository](https://github.com/btungut/toolkit/tree/master/hand-drill) for further details and source files.
+
+## Tags (verisons)
+Please visit the **tags** section of the [Docker Hub repository](https://hub.docker.com/r/btungut/hand-drill) to see available variations of the **hand-drill** docker image.
 
 ### Disclaimer
 This application provided for the purpose of illustration and debugging only and is not intended to be used in a production environment.
