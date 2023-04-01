@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: hand-drill
-    image: btungut/hand-drill:0.0.2
+    image: btungut/hand-drill:0.3
     resources:
       limits:
         cpu: "1"
